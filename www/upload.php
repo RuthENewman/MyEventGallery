@@ -37,7 +37,7 @@
 
         if (empty($errors)) {
             $uploaded = move_uploaded_file($fileTmpName, $uploadPath);
-
+            \Cloudinary\Uploader::upload($fileName);
             if($uploaded) {
                 header("Location: gallery.php");
                 exit();
@@ -53,5 +53,7 @@
         }
 
     }
+
+
 
 ?>
